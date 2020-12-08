@@ -30,9 +30,6 @@ create table actividad(
     cosntraint pk_activiad primary key (idActividad)
 )ENGINE-InnoDb;
 
-<<<<<<< HEAD
-)
-
 create table ventas_cabecera(
     idVCabecera int auto_increment not null,
     idPersona int not null,
@@ -51,7 +48,7 @@ create table ventas_detalle(
     constraint fk_ventas_detalle_cabecera foreign key (idVCabecera) references ventas_cabecera(idVCabecera),
     constraint fk_ventas_detalle_actividad foreign key (idActividad) references actividad(idActividad)
 )ENGINE-InnoDb;
-=======
+
 create table estado(
     idPersona int(25) not null,
     idActividad int not null,
@@ -61,4 +58,3 @@ create table estado(
     constraint fk_actividad foreign key (idActividad) references actividad(idActividad),
     constraint pk_estado primary key (idPersona,idActividad,idEstado)
 )ENGINE-InnoDb;
->>>>>>> 8302d54754720a724df20a1db6fc3bf94537153b
