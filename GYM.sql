@@ -9,7 +9,7 @@ create table rol (
 
 create table persona(
     idPersona int(25) auto_increment not null,
-     idRol int(25) not null,
+    idRol int(25) not null,
     dni int(30) not null,
     nombre varchar(50) not null,
     apellido varchar(50) not null,
@@ -26,3 +26,22 @@ create table persona(
 create table actividad(
 
 )
+
+create table ventas_cabecera(
+    idVCabecera int auto_increment not null,
+    idPersona int not null,
+    fecha date,
+    total float,
+    constraint pk_ventas_cabecera primary key (idVCabecera),
+    constraint fk_ventas_persona foreign key (idPersona) references persona(idPersona)
+)ENGINE-InnoDb;
+
+create table ventas_detalle(
+    idVDetalle int auto_increment not null,
+    idVCabecera int not null,
+    idActividad int not null,
+    fecha-expiracion date,
+    constraint pk_ventas_detalle primary key (idVDetalle),
+    constraint fk_ventas_detalle_cabecera foreign key (idVCabecera) references ventas_cabecera(idVCabecera),
+    constraint fk_ventas_detalle_actividad foreign key (idActividad) references actividad(idActividad)
+)ENGINE-InnoDb;
