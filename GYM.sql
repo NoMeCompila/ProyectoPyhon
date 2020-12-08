@@ -9,7 +9,7 @@ create table rol (
 
 create table persona(
     idPersona int(25) auto_increment not null,
-     idRol int(25) not null,
+    idRol int(25) not null,
     dni int(30) not null,
     nombre varchar(50) not null,
     apellido varchar(50) not null,
@@ -24,5 +24,18 @@ create table persona(
 )ENGINE-InnoDb;
 
 create table actividad(
+    idActividad int not null,
+    descripcion varchar (20) not null,
+    constraint uq_descripcion unique(descripcion),
+    cosntraint pk_activiad primary key (idActividad)
+)ENGINE-InnoDb;
 
+create table estado(
+    idPersona int(25) not null,
+    idActividad int not null,
+    idEstado int not null,
+    estado bit not null,
+    constraint fk_persona foreign key (idPersona) references persona(idPersona),
+    constraint fk_actividad foreign key (idActividad) references actividad(idActividad),
+    constraint pk_estado primary key (idPersona,idActividad,idEstado)
 )
