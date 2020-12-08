@@ -38,4 +38,4 @@ create table estado(
     constraint fk_persona foreign key (idPersona) references persona(idPersona),
     constraint fk_actividad foreign key (idActividad) references actividad(idActividad),
     constraint pk_estado primary key (idPersona,idActividad,idEstado)
-)
+)ENGINE-InnoDb;
