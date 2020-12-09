@@ -1,16 +1,16 @@
-create database IF NOT EXISTS gimnasio;
+create database  gimnasio;
 use gimnasio;
-create table IF NOT EXISTS rol (
-    idRol int(25) not null,
+create table rol (
+    idRol int identity not null,
     descripcion varchar(25) not null,
     constraint pk_rol primary key (idRol)
-)ENGINE=InnoDb;
+);
 
 
-create table IF NOT EXISTS persona(
-    idPersona int(25) auto_increment not null,
-    idRol int(25) not null,
-    dni int(30) not null,
+create table persona(
+    idPersona int identity not null,
+    idRol int not null,
+    dni int not null,
     nombre varchar(50) not null,
     apellido varchar(50) not null,
     sexo varchar(1),
@@ -20,41 +20,48 @@ create table IF NOT EXISTS persona(
     constraint uq_tel unique (tel),
     constraint uq_email unique (email),
     constraint uq_dni unique (dni),
-    constraint fk_rol foreign key (idRol) references rol (idRol)
-)ENGINE=InnoDb;
+    constraint fk_rol foreign key (idRol) references rol (idRol),
+	constraint chk_email check (email like '%@%.com')
+);
 
-create table IF NOT EXISTS actividad(
-    idActividad int not null,
+create table  actividad(
+    idActividad int identity not null,
     descripcion varchar (20) not null,
     constraint uq_descripcion unique(descripcion),
     constraint pk_activiad primary key (idActividad)
-)ENGINE=InnoDb;
+);
 
-create table IF NOT EXISTS ventas_cabecera(
-    idVCabecera int auto_increment not null,
+create table ventas_cabecera(
+    idVCabecera int identity not null,
     idPersona int not null,
     fecha date,
     total float,
     constraint pk_ventas_cabecera primary key (idVCabecera),
     constraint fk_ventas_persona foreign key (idPersona) references persona(idPersona)
-)ENGINE=InnoDb;
+);
 
-create table IF NOT EXISTS ventas_detalle(
-    idVDetalle int auto_increment not null,
+create table ventas_detalle(
+    idVDetalle int identity not null,
     idVCabecera int not null,
     idActividad int not null,
     fecha_expiracion date,
     constraint pk_ventas_detalle primary key (idVDetalle),
     constraint fk_ventas_detalle_cabecera foreign key (idVCabecera) references ventas_cabecera(idVCabecera),
     constraint fk_ventas_detalle_actividad foreign key (idActividad) references actividad(idActividad)
-)ENGINE=InnoDb;
+);
 
-create table IF NOT EXISTS estado(
-    idPersona int(25) not null,
+create table estado(
+    idPersona int not null,
     idActividad int not null,
-    idEstado int not null,
+    idEstado int identity not null,
     estado bit not null,
     constraint fk_persona foreign key (idPersona) references persona(idPersona),
     constraint fk_actividad foreign key (idActividad) references actividad(idActividad),
     constraint pk_estado primary key (idPersona,idActividad,idEstado)
-)ENGINE=InnoDb;
+);
+
+INSERT INTO rol (descripcion) VALUES ('Admin');
+INSERT INTO rol (descripcion) VALUES ('Owner');
+INSERT INTO rol (descripcion) VALUES ('Instructor');
+
+select * from rol
