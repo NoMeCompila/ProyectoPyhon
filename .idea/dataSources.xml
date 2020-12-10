@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="jdbc:sqlserver://localhost\DESKTOP-S18EFJ4\SQLEXPRESS:1433;database=gimnasio" uuid="51a1b8bb-31ae-4c9a-a047-304a0347859e">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost\DESKTOP-S18EFJ4\SQLEXPRESS:1433;database=gimnasio</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc:sqlserver://localhost\DESKTOP-S18EFJ4\SQLEXPRESS:1433;database=gimnasio [2]" uuid="cdbb01b1-45f3-4349-8f3c-3b1616c85227">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost\DESKTOP-S18EFJ4\SQLEXPRESS:1433;database=gimnasio</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc:sqlserver://localhost\DESKTOP-S18EFJ4\SQLEXPRESS:1433;database=gimnasio [3]" uuid="cfa35855-4921-4b68-8f1b-fc68a76ac85b">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost\DESKTOP-S18EFJ4\SQLEXPRESS:1433;database=gimnasio</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc:sqlserver://localhost\DESKTOP-S18EFJ4\SQLEXPRESS:1433;database=gimnasio [4]" uuid="0f372b76-fde1-4a15-9c11-3eafe74b1dea">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost\DESKTOP-S18EFJ4\SQLEXPRESS:1433;database=gimnasio</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
