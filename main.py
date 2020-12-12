@@ -3,6 +3,9 @@ Aplicacion de login
 '''
 from os import system
 
+import FinalUser
+from FinalUser import UsuarioFinal
+
 from FinalUser import ClaseAcciones #importo el paquete creado para realzar las acciones de login y singin
 def menu():
 #menú que al ingresar una opcion  limpia la pantalla automáticamente
@@ -25,7 +28,9 @@ def menu():
 
     elif opc == '2' or opc == 'registrarse' or opc == 'Registrarse':
         system("cls")
-        hacer.registrarse()
+        usuario1 = UsuarioFinal.UsuarioFinal()
+        #print(usuario1.usuario)
+        usuario1.registro()
 
     elif opc == '3' or opc == 'Ayuda' or opc == 'ayuda' or opc == 'AYUDA':
             system("cls")
