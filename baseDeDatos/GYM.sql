@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 create database IF NOT EXISTS gimnasio;
-
-=======
-create database  gimnasio;
->>>>>>> 0b61f15ea31563ba78a2e4f44bdf0c26961cd146
 use gimnasio;
 create table rol (
     idRol int identity not null,
@@ -63,15 +58,24 @@ create table estado(
     constraint fk_persona foreign key (idPersona) references persona(idPersona),
     constraint fk_actividad foreign key (idActividad) references actividad(idActividad),
     constraint pk_estado primary key (idPersona,idActividad,idEstado)
-<<<<<<< HEAD
-)ENGINE=InnoDb;
-
-=======
 );
+go
+
+create table FinalUser(
+	idUsuario int identity not null,
+	idPersona int not null,
+	usuario varchar(30) not null,
+	contra varchar(15) not null,
+
+	constraint uq_usuario unique(usuario),
+	constraint uq_contra unique(contra),
+	constraint pk_finalUser primary key (idUsuario),
+	constraint fk_idPersona_usuario foreign key (idPersona) references persona (idPersona)
+);
+go
+
 
 INSERT INTO rol (descripcion) VALUES ('Admin');
 INSERT INTO rol (descripcion) VALUES ('Owner');
 INSERT INTO rol (descripcion) VALUES ('Instructor');
-
 select * from rol
->>>>>>> 0b61f15ea31563ba78a2e4f44bdf0c26961cd146
